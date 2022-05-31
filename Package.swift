@@ -6,7 +6,8 @@ let package = Package(
     name: "spi-s3-check",
     platforms: [.macOS(.v12)],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.1.2"),  
+        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.1.2"),
+        .package(url: "https://github.com/soto-project/soto.git", from: "5.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -15,9 +16,10 @@ let package = Package(
             name: "s3-check",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "SotoS3", package: "soto"),
             ]),
         .testTarget(
-            name: "s3-checkTests",
+            name: "S3CheckTests",
             dependencies: ["s3-check"]),
     ]
 )

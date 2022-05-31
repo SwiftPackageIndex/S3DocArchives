@@ -1,12 +1,111 @@
 {
   "pins" : [
     {
+      "identity" : "async-http-client",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-server/async-http-client.git",
+      "state" : {
+        "revision" : "24425989dadab6d6e4167174791a23d4e2a6d0c3",
+        "version" : "1.10.0"
+      }
+    },
+    {
+      "identity" : "jmespath.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adam-fowler/jmespath.swift.git",
+      "state" : {
+        "revision" : "4513d319c4aaa6c3b2ac18e1e6566a803515ad91",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "soto",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/soto-project/soto.git",
+      "state" : {
+        "revision" : "3648a7fcbaa1ac06b6ab2b4b227d521ed065e780",
+        "version" : "5.13.1"
+      }
+    },
+    {
+      "identity" : "soto-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/soto-project/soto-core.git",
+      "state" : {
+        "revision" : "3079d17f2576cff5f2a3f68865629af455c673d1",
+        "version" : "5.9.3"
+      }
+    },
+    {
       "identity" : "swift-argument-parser",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-argument-parser.git",
       "state" : {
         "revision" : "f3c9084a71ef4376f2fabbdf1d3d90a49f1fabdb",
         "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+        "version" : "1.4.2"
+      }
+    },
+    {
+      "identity" : "swift-metrics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-metrics.git",
+      "state" : {
+        "revision" : "1c1408bf8fc21be93713e897d2badf500ea38419",
+        "version" : "2.3.1"
+      }
+    },
+    {
+      "identity" : "swift-nio",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio.git",
+      "state" : {
+        "revision" : "124119f0bb12384cef35aa041d7c3a686108722d",
+        "version" : "2.40.0"
+      }
+    },
+    {
+      "identity" : "swift-nio-extras",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-extras.git",
+      "state" : {
+        "revision" : "8eea84ec6144167354387ef9244b0939f5852dc8",
+        "version" : "1.11.0"
+      }
+    },
+    {
+      "identity" : "swift-nio-http2",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-http2.git",
+      "state" : {
+        "revision" : "72bcaf607b40d7c51044f65b0f5ed8581a911832",
+        "version" : "1.21.0"
+      }
+    },
+    {
+      "identity" : "swift-nio-ssl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-ssl.git",
+      "state" : {
+        "revision" : "1750873bce84b4129b5303655cce2c3d35b9ed3a",
+        "version" : "2.19.0"
+      }
+    },
+    {
+      "identity" : "swift-nio-transport-services",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-transport-services.git",
+      "state" : {
+        "revision" : "1a4692acb88156e3da1b0c6732a8a38b2a744166",
+        "version" : "1.12.0"
       }
     }
   ],
