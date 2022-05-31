@@ -15,7 +15,7 @@ final class spi_s3_checkTests: XCTestCase {
         // Mac Catalyst won't have `Process`, but it is supported for executables.
         #if !targetEnvironment(macCatalyst)
 
-        let fooBinary = productsDirectory.appendingPathComponent("spi-s3-check")
+        let fooBinary = productsDirectory.appendingPathComponent("s3-check")
 
         let process = Process()
         process.executableURL = fooBinary
