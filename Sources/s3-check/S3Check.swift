@@ -16,10 +16,13 @@ struct S3Check: AsyncParsableCommand {
     @Option(help: "AWS secrete access key")
     var awsSecretAccessKey: String
 
+    @Argument(help: "path prefix, for example 'apple/swift-docc'")
+    var prefix: String
+
     func run() async throws {
         print("Checking \(awsBucketName)")
 
-        let key = S3StoreKey(bucket: awsBucketName, directory: "apple/swift-docc")
+        let key = S3StoreKey(bucket: awsBucketName, directory: prefix)
         let client = AWSClient(credentialProvider: .static(accessKeyId: awsAccessKeyId,
                                                            secretAccessKey: awsSecretAccessKey),
                                httpClientProvider: .createNew)
@@ -31,7 +34,7 @@ struct S3Check: AsyncParsableCommand {
         let files = try await s3.listFiles(in: awsBucketName, key: key, delimiter: ".json")
         for f in files {
             if let path = try? folder.parse(f.file.key) {
-                print(path.ref, path.product)
+                print(path)
             }
         }
         print("Count: \(files.count)")
@@ -40,11 +43,15 @@ struct S3Check: AsyncParsableCommand {
 }
 
 
-struct Path {
+struct DocSet: CustomStringConvertible {
     var owner: String
     var repository: String
     var ref: String
     var product: String
+
+    var description: String {
+        "\(owner)/\(repository) @ \(ref) - \(product)"
+    }
 }
 
 
@@ -53,7 +60,7 @@ let pathSegment = Parse {
     "/"
 }
 
-let folder = Parse(Path.init) {
+let folder = Parse(DocSet.init) {
     pathSegment
     pathSegment
     pathSegment
