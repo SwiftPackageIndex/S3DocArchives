@@ -1,4 +1,5 @@
 import ArgumentParser
+import S3DocArchives
 
 
 @main
@@ -18,10 +19,10 @@ struct S3Check: AsyncParsableCommand {
     func run() async throws {
         print("Checking \(awsBucketName)")
 
-        let docSets = try await S3DocArchives.fetch(prefix: prefix,
-                                                    awsBucketName: awsBucketName,
-                                                    awsAccessKeyId: awsAccessKeyId,
-                                                    awsSecretAccessKey: awsSecretAccessKey)
+        let docSets = try await fetchS3DocArchives(prefix: prefix,
+                                                   awsBucketName: awsBucketName,
+                                                   awsAccessKeyId: awsAccessKeyId,
+                                                   awsSecretAccessKey: awsSecretAccessKey)
         for d in docSets {
             print(d)
         }
