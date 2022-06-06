@@ -23,6 +23,12 @@ struct S3Check: AsyncParsableCommand {
                                                    awsBucketName: awsBucketName,
                                                    awsAccessKeyId: awsAccessKeyId,
                                                    awsSecretAccessKey: awsSecretAccessKey)
+
+        guard !docSets.isEmpty else {
+            print("No results.")
+            return
+        }
+
         for d in docSets {
             print(d)
         }
