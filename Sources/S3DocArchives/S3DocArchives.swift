@@ -38,8 +38,7 @@ public enum S3DocArchives {
 
         init(s3: S3, in bucket: String, path: Path) async {
             self.path = path
-            let key = S3.StoreKey(bucket: bucket, path: path.s3path)
-            self.title = (try? await s3.getDocArchiveTitle(key: key)) ?? path.product
+            self.title = (try? await s3.getDocArchiveTitle(in: bucket, path: path)) ?? path.product
         }
 
         public var description: String {
@@ -147,7 +146,10 @@ private extension S3 {
         }
     }
 
-    func getDocArchiveTitle(key: StoreKey) async throws -> String? {
+    func getDocArchiveTitle(in bucket: String,
+                            path: S3DocArchives.DocArchive.Path) async throws -> String? {
+        let key = S3.StoreKey(bucket: bucket,
+                              path: path.s3path + "/data/documentation/\(path.product).json")
         guard let data = try await getFileContent(key: key) else { return nil }
         return try JSONDecoder().decode(S3DocArchives.DocumentationData.self, from: data)
             .metadata.title
