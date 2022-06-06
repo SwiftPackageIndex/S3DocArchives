@@ -19,10 +19,10 @@ struct S3Check: AsyncParsableCommand {
     func run() async throws {
         print("Checking \(awsBucketName)")
 
-        let docSets = try await S3DocArchives.fetch(prefix: prefix,
-                                                   awsBucketName: awsBucketName,
-                                                   awsAccessKeyId: awsAccessKeyId,
-                                                   awsSecretAccessKey: awsSecretAccessKey)
+        let docSets = try await DocArchive.fetchAll(prefix: prefix,
+                                                    awsBucketName: awsBucketName,
+                                                    awsAccessKeyId: awsAccessKeyId,
+                                                    awsSecretAccessKey: awsSecretAccessKey)
 
         guard !docSets.isEmpty else {
             print("No results.")
