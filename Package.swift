@@ -10,9 +10,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.1.2"),
-        // Replace the revision with a proper tag once we have one.
         .package(url: "https://github.com/SwiftPackageIndex/SwiftPackageIndex-Server",
-                 revision: "63c05a598b3602f8a682fe12d4f7d0e03ee62a04"),
+                 from: "2.71.0"),
     ],
     targets: [
         .executableTarget(

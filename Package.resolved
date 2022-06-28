@@ -131,7 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SwiftPackageIndex/SwiftPackageIndex-Server",
       "state" : {
-        "revision" : "63c05a598b3602f8a682fe12d4f7d0e03ee62a04"
+        "revision" : "f662c56c8d11954abde1e60e2b821077bcf6ef7b",
+        "version" : "2.71.4"
       }
     },
     {
